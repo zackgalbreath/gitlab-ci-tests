@@ -1,18 +1,8 @@
-pr_pipeline:
-  only:
-  - /^github_pr_.*$/
-  variables:
-    UPSTREAM_SECRET_ONE: ${UPSTREAM_SECRET_ONE}
-    IS_PR_PIPELINE: "True"
-  trigger:
-    project: scott/test-downstream
-    strategy: depend
-
-merge_pipeline:
-  only:
-  - master
-  variables:
-    UPSTREAM_SECRET_ONE: ${UPSTREAM_SECRET_ONE}
-  trigger:
-    project: scott/test-downstream
-    strategy: depend
+medium-sleep-job:
+  image:
+    name: busybox
+  tags:
+    - spack-kube
+    - medium
+  script:
+    - sleep 30
