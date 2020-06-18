@@ -4,7 +4,7 @@ pr_pipeline:
   variables:
     SPACK_REPO: https://github.com/scottwittenburg/spack.git
     SPACK_REF: user-defined-pipeline-scripts
-    IS_PR_PIPELINE: "True"
+    SPACK_IS_PR_PIPELINE: "True"
   trigger:
     project: scott/test-downstream
     branch: spack-env
