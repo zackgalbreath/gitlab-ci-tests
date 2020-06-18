@@ -14,6 +14,8 @@ merge_pipeline:
   only:
   - master
   variables:
+    SPACK_REPO: https://github.com/spack/spack.git
+    SPACK_REF: user-defined-pipeline-scripts
     AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
     AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     SPACK_SIGNING_KEY: ${SPACK_SIGNING_KEY}
