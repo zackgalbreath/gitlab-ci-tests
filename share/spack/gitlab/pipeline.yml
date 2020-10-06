@@ -2,24 +2,19 @@ pr_pipeline:
   only:
   - /^github\/pr[\d]+_.*$/
   variables:
-    SPACK_REPO: https://github.com/scottwittenburg/spack.git
-    SPACK_REF: user-defined-pipeline-scripts
+    SPACK_PR_BRANCH:
     SPACK_IS_PR_PIPELINE: "True"
   trigger:
     project: scott/test-downstream
-    branch: spack-env
     strategy: depend
 
 merge_pipeline:
   only:
   - master
   variables:
-    SPACK_REPO: https://github.com/scottwittenburg/spack.git
-    SPACK_REF: user-defined-pipeline-scripts
     AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
     AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     SPACK_SIGNING_KEY: ${SPACK_SIGNING_KEY}
   trigger:
     project: scott/test-downstream
-    branch: spack-env
     strategy: depend
