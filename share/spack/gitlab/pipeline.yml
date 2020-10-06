@@ -2,7 +2,7 @@ pr_pipeline:
   only:
   - /^github\/pr[\d]+_.*$/
   variables:
-    SPACK_PR_BRANCH:
+    SPACK_PR_BRANCH: ${CI_COMMIT_REF_NAME}
     SPACK_IS_PR_PIPELINE: "True"
   trigger:
     project: scott/test-downstream
