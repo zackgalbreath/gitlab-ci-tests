@@ -4,6 +4,8 @@ pr_pipeline:
   variables:
     SPACK_PR_BRANCH: ${CI_COMMIT_REF_NAME}
     SPACK_IS_PR_PIPELINE: "True"
+    AWS_ACCESS_KEY_ID: ${PR_MIRRORS_AWS_ACCESS_KEY_ID}
+    AWS_SECRET_ACCESS_KEY: ${PR_MIRRORS_AWS_SECRET_ACCESS_KEY}
   trigger:
     project: scott/test-downstream
     strategy: depend
