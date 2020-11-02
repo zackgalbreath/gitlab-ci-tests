@@ -1,0 +1,8 @@
+medium-sleep-job:
+  image:
+    name: busybox
+  tags:
+    - spack-kube
+    - medium
+  script:
+    - sleep 3
